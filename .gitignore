@@ -4,3 +4,4 @@ main/
 msys2/
 r/
 conda-forge/
+*.code-workspace
