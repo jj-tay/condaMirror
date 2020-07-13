@@ -34,7 +34,7 @@ do
 	  --upstream-channel https://conda.anaconda.org/conda-forge \
 	  --target-directory conda-forge \
 	  --platform $PLATFORM \
-    --config $CWD/whitelist.yaml
+    --config $CWD/whitelist.yaml \
 	  -vv
 done
 
