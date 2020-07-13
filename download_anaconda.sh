@@ -5,7 +5,7 @@ source $HOME/anaconda3/etc/profile.d/conda.sh
 
 # Create conda-miror environment if required
 RESULT=$(conda env list | grep -c conda-mirror)
-if [ $RESULT -eq 0 ]
+if [ $RESULT -eq "0" ]
 then
 	conda env create -f environment.yml
 	conda activate conda-mirror
@@ -27,12 +27,14 @@ do
 done
 
 # Download conda-forge channel for win-64, linux-64, noarch
+CWD=`dirname $0`
 for PLATFORM in win-64 linux-64 noarch
 do
     conda-mirror \
 	  --upstream-channel https://conda.anaconda.org/conda-forge \
 	  --target-directory conda-forge \
 	  --platform $PLATFORM \
+    --config $CWD/whitelist.yaml
 	  -vv
 done
 
