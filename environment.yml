@@ -5,35 +5,36 @@ channels:
 dependencies:
   - _libgcc_mutex=0.1=conda_forge
   - _openmp_mutex=4.5=0_gnu
-  - ca-certificates=2019.11.28=hecc5488_0
-  - certifi=2019.11.28=py38_0
-  - cffi=1.13.2=py38h8022711_0
-  - chardet=3.0.4=py_1004
-  - conda-mirror=0.8.1=py_1
-  - cryptography=2.8=py38h72c5cf5_1
-  - idna=2.8=py38_1000
-  - ld_impl_linux-64=2.33.1=h53a641e_8
-  - libffi=3.2.1=he1b5a44_1006
+  - brotlipy=0.7.0=py38h1e0a361_1000
+  - ca-certificates=2020.6.20=hecda079_0
+  - certifi=2020.6.20=py38h32f6830_0
+  - cffi=1.14.0=py38hd463f26_0
+  - chardet=3.0.4=py38h32f6830_1006
+  - conda-mirror=0.8.2=py_1
+  - cryptography=2.9.2=py38h766eaa4_0
+  - idna=2.10=pyh9f0ad1d_0
+  - ld_impl_linux-64=2.34=h53a641e_7
+  - libffi=3.2.1=he1b5a44_1007
   - libgcc-ng=9.2.0=h24d8f2e_2
   - libgomp=9.2.0=h24d8f2e_2
   - libstdcxx-ng=9.2.0=hdf63c60_2
   - ncurses=6.1=hf484d3e_1002
-  - openssl=1.1.1d=h516909a_0
-  - pip=20.0.2=py_2
-  - pycparser=2.19=py38_1
-  - pyopenssl=19.1.0=py38_0
-  - pysocks=1.7.1=py38_0
-  - python=3.8.1=h357f687_2
-  - pyyaml=5.3=py38h516909a_0
-  - readline=8.0=hf8c457e_0
-  - requests=2.22.0=py38_1
-  - setuptools=45.1.0=py38_0
-  - six=1.14.0=py38_0
-  - sqlite=3.30.1=hcee41ef_0
+  - openssl=1.1.1g=h516909a_0
+  - pip=20.1.1=py_1
+  - pycparser=2.20=pyh9f0ad1d_2
+  - pyopenssl=19.1.0=py_1
+  - pysocks=1.7.1=py38h32f6830_1
+  - python=3.8.3=cpython_he5300dc_0
+  - python_abi=3.8=1_cp38
+  - pyyaml=5.3.1=py38h1e0a361_0
+  - readline=8.0=h46ee950_1
+  - requests=2.24.0=pyh9f0ad1d_0
+  - setuptools=49.2.0=py38h32f6830_0
+  - six=1.15.0=pyh9f0ad1d_0
+  - sqlite=3.32.3=hcee41ef_1
   - tk=8.6.10=hed695b0_0
-  - urllib3=1.25.7=py38_0
+  - urllib3=1.25.9=py_0
   - wheel=0.34.2=py_1
-  - xz=5.2.4=h14c3975_1001
-  - yaml=0.2.2=h516909a_1
+  - xz=5.2.5=h516909a_1
+  - yaml=0.2.5=h516909a_0
   - zlib=1.2.11=h516909a_1006
-
