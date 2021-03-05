@@ -13,8 +13,8 @@ else
 	conda activate conda-mirror
 fi
 
-# Download main, free, r channels for win-64, linux-64, noarch
-for CHANNEL in main free r
+# Download main, r channels for win-64, linux-64, noarch
+for CHANNEL in main r
 do
   for PLATFORM in win-64 linux-64 noarch
   do
