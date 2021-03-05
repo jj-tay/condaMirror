@@ -45,14 +45,17 @@ conda-mirror \
   --platform win-64 \
   -vv
 
-# Download esri channel for win-64, noarch
-for PLATFORM in win-64 noarch
+# Download fastai, pytorch, esri channel for win-64, noarch
+for CHANNEL in fastai pytorch esri
 do
-  conda-mirror \
-  --upstream-channel https://conda.anaconda.org/esri/ \
-  --target-directory esri \
-  --platform $PLATFORM \
-  -vv
+  for PLATFORM in win-64 linux-64 noarch
+  do
+    conda-mirror \
+	  --upstream-channel https://conda.anaconda.org/$CHANNEL \
+	  --target-directory $CHANNEL \
+	  --platform $PLATFORM \
+	  -vv
+  done
 done
 
 # Exit conda-mirror environment and return to previous directory
