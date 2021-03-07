@@ -34,7 +34,7 @@ do
 	  --upstream-channel https://conda.anaconda.org/conda-forge \
 	  --target-directory conda-forge \
 	  --platform $PLATFORM \
-    --config $CWD/whitelist.yaml \
+	  --config $CWD/whitelist_condaforge.yaml \
 	  -vv
 done
 
@@ -45,8 +45,8 @@ conda-mirror \
   --platform win-64 \
   -vv
 
-# Download fastai, pytorch, esri channel for win-64, noarch
-for CHANNEL in fastai pytorch esri
+# Download fastai, esri channel for win-64, linux-64, noarch
+for CHANNEL in fastai esri
 do
   for PLATFORM in win-64 linux-64 noarch
   do
@@ -57,6 +57,17 @@ do
 	  -vv
   done
 done
+
+# Download pytorch channel for win-64, linux-64, noarch
+for PLATFORM in win-64 linux-64 noarch
+  do
+    conda-mirror \
+	  --upstream-channel https://conda.anaconda.org/pytorch \
+	  --target-directory pytorch \
+	  --platform $PLATFORM \
+	  --config $CWD/whitelist_pytorch.yaml \
+	  -vv
+  done
 
 # Exit conda-mirror environment and return to previous directory
 conda deactivate
