@@ -3,3 +3,10 @@ blacklist:
 whitelist:
     - name: "dvc"
     - name: "pycocotools"
+    - name: "branca"
+    - name: "charset-normalizer"
+    - name: "folium"
+    - name: "libblas"
+    - name: "libcblas"
+    - name: "liblapack"
+    - name: "python_abi"
