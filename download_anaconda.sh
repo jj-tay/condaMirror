@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Record start time for use to detect new files later
+START_DATETIME=$(date +"%F %T")
+
 # Setup conda
 source $HOME/miniconda3/etc/profile.d/conda.sh
 
@@ -76,3 +79,20 @@ then
 	conda remove -y -n conda-mirror --all
 fi
 
+# Copy new files to modified folder to ease file transfers
+if [ -d to_transfer ]
+then 
+	rm -rf to_transfer/
+fi
+mkdir to_transfer
+find \
+	conda-forge/ \
+	esri/ \
+	fastai/ \
+	main/ \
+	msys2/ \
+	pytorch/ \
+	r/ \
+	-type f \
+	-newermt "$START_DATETIME" \
+	-exec rsync -R {} to_transfer \;
