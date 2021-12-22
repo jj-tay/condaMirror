@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Setup conda
-source $HOME/anaconda3/etc/profile.d/conda.sh
+source $HOME/miniconda3/etc/profile.d/conda.sh
 
 # Create conda-miror environment if required
 RESULT=$(conda env list | grep -c conda-mirror)
