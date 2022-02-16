@@ -10,3 +10,5 @@ whitelist:
     - name: "libcblas"
     - name: "liblapack"
     - name: "python_abi"
+    - name: "python-certifi-win32"
+    - name: "diagrams"
