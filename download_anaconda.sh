@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 # Record start time for use to detect new files later
 START_DATETIME=$(date +"%F %T")
@@ -8,7 +9,7 @@ source $HOME/miniconda3/etc/profile.d/conda.sh
 
 # Create conda-miror environment if required
 RESULT=$(conda env list | grep -c conda-mirror)
-if [ $RESULT -eq "0" ]
+if [ $RESULT -eq 0 ]
 then
 	conda env create -f environment.yml
 	conda activate conda-mirror
@@ -30,14 +31,13 @@ do
 done
 
 # Download conda-forge channel for win-64, linux-64, noarch
-CWD=`dirname $0`
 for PLATFORM in win-64 linux-64 noarch
 do
     conda-mirror \
 	  --upstream-channel https://conda.anaconda.org/conda-forge \
 	  --target-directory conda-forge \
 	  --platform $PLATFORM \
-	  --config $CWD/whitelist_condaforge.yaml \
+	  --config whitelist_condaforge.yaml \
 	  -vv
 done
 
@@ -68,7 +68,7 @@ for PLATFORM in win-64 linux-64 noarch
 	  --upstream-channel https://conda.anaconda.org/pytorch \
 	  --target-directory pytorch \
 	  --platform $PLATFORM \
-	  --config $CWD/whitelist_pytorch.yaml \
+	  --config whitelist_pytorch.yaml \
 	  -vv
   done
 
@@ -81,7 +81,7 @@ fi
 
 # Copy new files to modified folder to ease file transfers
 if [ -d to_transfer ]
-then 
+then
 	rm -rf to_transfer/
 fi
 mkdir to_transfer
