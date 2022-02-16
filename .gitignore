@@ -7,3 +7,4 @@ conda-forge/
 *.code-workspace
 fastai/
 pytorch/
+to_transfer/
