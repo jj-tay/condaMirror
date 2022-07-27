@@ -8,3 +8,4 @@ conda-forge/
 fastai/
 pytorch/
 to_transfer/
+*.log
