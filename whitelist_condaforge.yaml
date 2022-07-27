@@ -12,3 +12,4 @@ whitelist:
     - name: "python_abi"
     - name: "python-certifi-win32"
     - name: "diagrams"
+    - name: "jupyterlab-git"
