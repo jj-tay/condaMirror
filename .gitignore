@@ -1,11 +1,3 @@
-esri/
-free/
-main/
-msys2/
-r/
-conda-forge/
 *.code-workspace
-fastai/
-pytorch/
-to_transfer/
 *.log
+condaMirror/
