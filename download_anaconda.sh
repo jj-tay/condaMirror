@@ -24,7 +24,7 @@ do
   do
     conda-mirror \
 	  --upstream-channel https://repo.continuum.io/pkgs/$CHANNEL \
-	  --target-directory $CHANNEL \
+	  --target-directory condaMirror/$CHANNEL \
 	  --platform $PLATFORM \
 	  -vv
   done
@@ -35,7 +35,7 @@ for PLATFORM in win-64 linux-64 noarch
 do
     conda-mirror \
 	  --upstream-channel https://conda.anaconda.org/conda-forge \
-	  --target-directory conda-forge \
+	  --target-directory condaMirror/conda-forge \
 	  --platform $PLATFORM \
 	  --config whitelist_condaforge.yaml \
 	  -vv
@@ -44,7 +44,7 @@ done
 # Download msys2 channel for win-64
 conda-mirror \
   --upstream-channel https://repo.continuum.io/pkgs/msys2 \
-  --target-directory msys2 \
+  --target-directory condaMirror/msys2 \
   --platform win-64 \
   -vv
 
@@ -55,7 +55,7 @@ do
   do
     conda-mirror \
 	  --upstream-channel https://conda.anaconda.org/$CHANNEL \
-	  --target-directory $CHANNEL \
+	  --target-directory condaMirror/$CHANNEL \
 	  --platform $PLATFORM \
 	  -vv
   done
@@ -66,7 +66,7 @@ for PLATFORM in win-64 linux-64 noarch
   do
     conda-mirror \
 	  --upstream-channel https://conda.anaconda.org/pytorch \
-	  --target-directory pytorch \
+	  --target-directory condaMirror/pytorch \
 	  --platform $PLATFORM \
 	  --config whitelist_pytorch.yaml \
 	  -vv
@@ -78,21 +78,3 @@ if [ $RESULT -eq 0 ]
 then
 	conda remove -y -n conda-mirror --all
 fi
-
-# Copy new files to modified folder to ease file transfers
-if [ -d to_transfer ]
-then
-	rm -rf to_transfer/
-fi
-mkdir to_transfer
-find \
-	conda-forge/ \
-	esri/ \
-	fastai/ \
-	main/ \
-	msys2/ \
-	pytorch/ \
-	r/ \
-	-type f \
-	-newermt "$START_DATETIME" \
-	-exec rsync -R {} to_transfer \;
