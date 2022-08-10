@@ -13,3 +13,5 @@ whitelist:
     - name: "python-certifi-win32"
     - name: "diagrams"
     - name: "jupyterlab-git"
+    - name: "jupytext"
+    - name: "rasterio"
