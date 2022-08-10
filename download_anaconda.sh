@@ -38,6 +38,7 @@ do
 	  --target-directory condaMirror/conda-forge \
 	  --platform $PLATFORM \
 	  --config whitelist_condaforge.yaml \
+      -D \
 	  -vv
 done
 
@@ -69,6 +70,7 @@ for PLATFORM in win-64 linux-64 noarch
 	  --target-directory condaMirror/pytorch \
 	  --platform $PLATFORM \
 	  --config whitelist_pytorch.yaml \
+      -D \
 	  -vv
   done
 
