@@ -17,6 +17,9 @@ else
 	conda activate conda-mirror
 fi
 
+# Set temp directory
+TEMPDIR=tempdir
+
 # Download main, r channels for win-64, linux-64, noarch
 for CHANNEL in main r
 do
@@ -24,6 +27,7 @@ do
   do
     conda-mirror \
 	  --upstream-channel https://repo.continuum.io/pkgs/$CHANNEL \
+      --temp-directory $TEMPDIR \
 	  --target-directory condaMirror/$CHANNEL \
 	  --platform $PLATFORM \
 	  -vv
@@ -35,6 +39,7 @@ for PLATFORM in win-64 linux-64 noarch
 do
     conda-mirror \
 	  --upstream-channel https://conda.anaconda.org/conda-forge \
+      --temp-directory $TEMPDIR \
 	  --target-directory condaMirror/conda-forge \
 	  --platform $PLATFORM \
 	  --config whitelist_condaforge.yaml \
@@ -45,6 +50,7 @@ done
 # Download msys2 channel for win-64
 conda-mirror \
   --upstream-channel https://repo.continuum.io/pkgs/msys2 \
+  --temp-directory $TEMPDIR \
   --target-directory condaMirror/msys2 \
   --platform win-64 \
   -vv
@@ -56,6 +62,7 @@ do
   do
     conda-mirror \
 	  --upstream-channel https://conda.anaconda.org/$CHANNEL \
+      --temp-directory $TEMPDIR \
 	  --target-directory condaMirror/$CHANNEL \
 	  --platform $PLATFORM \
 	  -vv
@@ -67,6 +74,7 @@ for PLATFORM in win-64 linux-64 noarch
   do
     conda-mirror \
 	  --upstream-channel https://conda.anaconda.org/pytorch \
+      --temp-directory $TEMPDIR \
 	  --target-directory condaMirror/pytorch \
 	  --platform $PLATFORM \
 	  --config whitelist_pytorch.yaml \
