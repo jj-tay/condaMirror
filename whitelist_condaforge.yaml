@@ -16,3 +16,4 @@ whitelist:
     - name: "jupytext"
     - name: "rasterio"
     - name: "sentence-transformers"
+    - name: "hdbscan"
