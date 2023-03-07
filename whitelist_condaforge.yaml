@@ -17,3 +17,4 @@ whitelist:
     - name: "rasterio"
     - name: "sentence-transformers"
     - name: "hdbscan"
+    - name: "pygeos"
