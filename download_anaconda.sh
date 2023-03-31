@@ -53,6 +53,7 @@ conda-mirror \
   --temp-directory $TEMPDIR \
   --target-directory condaMirror/msys2 \
   --platform win-64 \
+  -D \
   -vv
 
 # Download fastai, esri channel for win-64, linux-64, noarch
@@ -65,6 +66,7 @@ do
       --temp-directory $TEMPDIR \
 	  --target-directory condaMirror/$CHANNEL \
 	  --platform $PLATFORM \
+      -D \
 	  -vv
   done
 done
