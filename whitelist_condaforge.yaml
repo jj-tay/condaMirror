@@ -299,3 +299,5 @@ whitelist:
     - name: "zipp"
     - name: "zlib"
     - name: "zstd"
+    - name: "jupyter-dash"
+    - name: "dash-bootstrap-components"
