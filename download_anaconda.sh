@@ -84,6 +84,12 @@ for PLATFORM in win-64 linux-64 noarch
 	  -vv
   done
 
+# Index the channels
+for CHANNEL in condaMirror/*
+do
+  python -m conda_mirror index $CHANNEL
+done
+
 # Exit conda-mirror environment and return to previous directory
 conda deactivate
 if [ $RESULT -eq 0 ]
