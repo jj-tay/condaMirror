@@ -64,7 +64,7 @@ for %%P in (win-64 linux-64 noarch) do (
 REM Index the channels
 
 for /f %%C in ('dir /b condaMirror') do (
-  python -m conda_mirror index %%C
+  python -m conda_mirror condaMirror\%%C
 )
 
 REM Sync to S3

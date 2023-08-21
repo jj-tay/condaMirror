@@ -71,7 +71,7 @@ for PLATFORM in win-64 linux-64 noarch
 # Index the channels
 for CHANNEL in condaMirror/*
 do
-  python -m conda_mirror index $CHANNEL
+  python -m conda_mirror $CHANNEL
 done
 
 # Sync to S3
