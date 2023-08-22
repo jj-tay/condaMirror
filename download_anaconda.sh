@@ -4,6 +4,9 @@ set -e
 # Set temp directory
 TEMPDIR=tempdir
 
+# Activate conda environment
+conda activate conda-mirror
+
 # Download main, r channels for win-64, linux-64, noarch
 for CHANNEL in main r
 do
@@ -71,8 +74,11 @@ for PLATFORM in win-64 linux-64 noarch
 # Index the channels
 for CHANNEL in condaMirror/*
 do
-  python -m conda_mirror $CHANNEL
+  python -m conda_index $CHANNEL
 done
+
+# Deactivate conda environment
+conda deactivate
 
 # Sync to S3
 aws s3 sync condaMirror s3://s3fs-mount-s3-prod/hdbconda --delete --debug --profile hdbba-s3fs
