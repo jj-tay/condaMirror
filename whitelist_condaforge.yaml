@@ -229,6 +229,7 @@ whitelist:
     - name: "pycparser"
     - name: "pygeos"
     - name: "pygments"
+    - name: "pyldavis"
     - name: "pymc3"
     - name: "pyodbc"
     - name: "pyomo"
