@@ -1,0 +1,6 @@
+---
+blacklist:
+    - name: "*"
+whitelist:
+  - name: "pytest-playwright"
+  - name: "playwright"

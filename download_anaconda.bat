@@ -14,7 +14,8 @@ for %%C in (main r) do (
     --temp-directory %TEMPDIR% ^
 	  --target-directory condaMirror\%%C ^
 	  --platform %%P ^
-	  -vv
+	  -vv ^
+    --no-validate-target
   )
 )
 
@@ -27,7 +28,8 @@ for %%P in (win-64 linux-64 noarch) do (
   --platform %%P ^
   --config whitelist_condaforge.yaml ^
   -D ^
-  -vv
+  -vv ^
+  --no-validate-target
 )
 
 REM Download msys2 channel for win-64
@@ -37,7 +39,8 @@ conda-mirror ^
 --target-directory condaMirror\msys2 ^
 --platform win-64 ^
 -D ^
--vv
+-vv ^
+--no-validate-target
 
 REM Download fastai, esri channel for win-64, linux-64, noarch
 for %%C in (fastai esri) do (
@@ -48,7 +51,8 @@ for %%C in (fastai esri) do (
 	  --target-directory condaMirror\%%C ^
 	  --platform %%P ^
     -D ^
-	  -vv
+	  -vv ^
+    --no-validate-target
   )
 )
 
@@ -61,7 +65,21 @@ for %%P in (win-64 linux-64 noarch) do (
 	--platform %%P ^
 	--config whitelist_pytorch.yaml ^
   -D ^
-	-vv
+	-vv ^
+  --no-validate-target
+)
+
+REM Download microsoft channel for win-64, linux-64, noarch
+for %%P in (win-64 linux-64 noarch) do (
+  conda-mirror ^
+  --upstream-channel https://conda.anaconda.org/microsoft ^
+  --temp-directory %TEMPDIR% ^
+	--target-directory condaMirror\microsoft ^
+	--platform %%P ^
+	--config whitelist_microsoft.yaml ^
+  -D ^
+	-vv ^
+  --no-validate-target
 )
 
 REM Index the channels
