@@ -293,6 +293,8 @@ whitelist:
     - name: "stack_data"
     - name: "statsforecast"
     - name: "statsmodels"
+    - name: "tabula-py"
+    - name: "tabulate"
     - name: "tbb"
     - name: "tenacity"
     - name: "tensorflow"
