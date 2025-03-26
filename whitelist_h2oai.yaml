@@ -1,0 +1,5 @@
+---
+blacklist:
+    - name: "*"
+whitelist:
+    - name: "h2o"
